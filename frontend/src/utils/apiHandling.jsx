@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
+
 export const fetchNextQuestion = async (userId) => {
   try {
-    const response = await axios.get(`/questions`, {
+    const response = await axios.get(`${BASE_URL}/questions`, {
       params: { user_id: userId },
     });
     return response.data;
@@ -14,7 +16,7 @@ export const fetchNextQuestion = async (userId) => {
 
 export const submitAnswer = async (userId, questionId, answer) => {
   try {
-    const response = await axios.post(`/answers`, {
+    const response = await axios.post(`${BASE_URL}/answers`, {
       user_id: userId,
       question_id: questionId,
       answer: answer,
