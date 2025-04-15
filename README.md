@@ -33,7 +33,7 @@ A dynamic, multi-step questionnaire application with branching logic, built usin
 ---
 ## 🌐 Live Demo
 
-🚀 Check out the deployed app here: [questionnaireapp.up.railway.app](https://questionnaireapp.up.railway.app/)
+🚀 Check out the deployed app here: <a href="https://questionnaireapp.up.railway.app/" target="_blank">questionnaireapp.up.railway.app</a>
 
 ---
 
