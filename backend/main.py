@@ -6,6 +6,7 @@ from models import Question, UserResponse
 from pydantic import BaseModel
 from typing import List, Optional, Dict
 from contextlib import asynccontextmanager
+from fastapi.middleware.cors import CORSMiddleware
 
 # Pydantic schema
 class QuestionOut(BaseModel):
@@ -41,6 +42,15 @@ async def lifespan(app: FastAPI):
     print("🖲️ DB Session Stop")
 
 app = FastAPI(lifespan=lifespan)
+
+# Enable CORS to avoid frontend cross-origin issues
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can restrict this to specific domains in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Accessing the DB session directly from app.state
 @app.get("/getQuestion", response_model=List[QuestionOut])
@@ -92,8 +102,6 @@ def submit_answer(answer: AnswerInput):
         user_id=answer.user_id,
         question_id=answer.question_id,
         answer=answer.answer,
-        # name=answer.name,
-        # timestamp=answer.timestamp
     ))
     db.commit()
 
