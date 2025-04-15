@@ -1,0 +1,147 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Which language do you like?",
+      "type": "mcq",
+      "options": ["python", "java", "javascript"],
+      "next_map": {
+        "python": "q2_py",
+        "java": "q2_java",
+        "javascript": "q2_js"
+      },
+      "category": "language"
+    },
+    {
+      "id": "q2_py",
+      "text": "Which Python framework do you use?",
+      "type": "mcq",
+      "options": ["Flask", "FastAPI", "Django"],
+      "next_map": {
+        "Flask": "q3_flask",
+        "FastAPI": "q3_fastapi",
+        "Django": "q3_django"
+      },
+      "category": "python_framework"
+    },
+    {
+      "id": "q2_java",
+      "text": "Which Java framework do you use?",
+      "type": "mcq",
+      "options": ["Spring", "Spring Boot"],
+      "next_map": {
+        "Spring": "q3_spring",
+        "Spring Boot": "q3_spring_boot"
+      },
+      "category": "java_framework"
+    },
+    {
+      "id": "q2_js",
+      "text": "Which JavaScript framework do you use?",
+      "type": "mcq",
+      "options": ["React", "Angular", "Vue"],
+      "next_map": {
+        "React": "q3_react",
+        "Angular": "q3_angular",
+        "Vue": "q3_vue"
+      },
+      "category": "javascript_framework"
+    },
+    {
+      "id": "q3_flask",
+      "text": "How proficient are you with Flask?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_flask_beginner",
+        "Intermediate": "q4_flask_intermediate",
+        "Expert": "q4_flask_expert"
+      },
+      "category": "flask_proficiency"
+    },
+    {
+      "id": "q3_fastapi",
+      "text": "How proficient are you with FastAPI?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_fastapi_beginner",
+        "Intermediate": "q4_fastapi_intermediate",
+        "Expert": "q4_fastapi_expert"
+      },
+      "category": "fastapi_proficiency"
+    },
+    {
+      "id": "q3_django",
+      "text": "How proficient are you with Django?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_django_beginner",
+        "Intermediate": "q4_django_intermediate",
+        "Expert": "q4_django_expert"
+      },
+      "category": "django_proficiency"
+    },
+    {
+      "id": "q3_spring",
+      "text": "How proficient are you with Spring?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_spring_beginner",
+        "Intermediate": "q4_spring_intermediate",
+        "Expert": "q4_spring_expert"
+      },
+      "category": "spring_proficiency"
+    },
+    {
+      "id": "q3_spring_boot",
+      "text": "How proficient are you with Spring Boot?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_spring_boot_beginner",
+        "Intermediate": "q4_spring_boot_intermediate",
+        "Expert": "q4_spring_boot_expert"
+      },
+      "category": "spring_boot_proficiency"
+    },
+    {
+      "id": "q3_react",
+      "text": "How proficient are you with React?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_react_beginner",
+        "Intermediate": "q4_react_intermediate",
+        "Expert": "q4_react_expert"
+      },
+      "category": "react_proficiency"
+    },
+    {
+      "id": "q3_angular",
+      "text": "How proficient are you with Angular?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_angular_beginner",
+        "Intermediate": "q4_angular_intermediate",
+        "Expert": "q4_angular_expert"
+      },
+      "category": "angular_proficiency"
+    },
+    {
+      "id": "q3_vue",
+      "text": "How proficient are you with Vue?",
+      "type": "mcq",
+      "options": ["Beginner", "Intermediate", "Expert"],
+      "next_map": {
+        "Beginner": "q4_vue_beginner",
+        "Intermediate": "q4_vue_intermediate",
+        "Expert": "q4_vue_expert"
+      },
+      "category": "vue_proficiency"
+    }
+  ]
+}

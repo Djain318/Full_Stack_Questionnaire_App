@@ -1,0 +1,7 @@
+fastapi==0.95.1
+uvicorn==0.18.3
+sqlalchemy==2.0.0
+pydantic==1.10.4
+databases==0.5.4
+aiofiles==0.8.0
+python-dotenv==0.20.0
