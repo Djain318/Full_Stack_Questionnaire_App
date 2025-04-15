@@ -16,9 +16,6 @@ A dynamic, multi-step questionnaire application with branching logic, built usin
   <a href="https://redux-toolkit.js.org/">
     <img src="https://img.shields.io/badge/Redux-Toolkit-764ABC?logo=redux&logoColor=white" alt="Redux Toolkit" />
   </a>
-  <a href="https://www.framer.com/motion/">
-    <img src="https://img.shields.io/badge/Framer_Motion-Animation-black?logo=framer&logoColor=white" alt="Framer Motion" />
-  </a>
   <a href="https://vitejs.dev/">
     <img src="https://img.shields.io/badge/Vite-Frontend-646CFF?logo=vite&logoColor=white" alt="Vite" />
   </a>
