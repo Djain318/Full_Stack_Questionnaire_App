@@ -37,7 +37,7 @@ const QuestionPage = () => {
       const response = await fetchNextQuestion(userId);
 
       // Delay for smoother UI or simulate slow server
-      await new Promise((res) => setTimeout(res, 10000));
+      //await new Promise((res) => setTimeout(res, 10000));
       
       setCurrQuestion(response); // Set question from API
       dispatch(
