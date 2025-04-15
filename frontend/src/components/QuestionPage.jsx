@@ -35,7 +35,7 @@ const QuestionPage = () => {
     try {
       setLoading(true);
       const response = await fetchNextQuestion(userId);
-
+      console.log(response);
       // Delay for smoother UI or simulate slow server
       //await new Promise((res) => setTimeout(res, 10000));
       
