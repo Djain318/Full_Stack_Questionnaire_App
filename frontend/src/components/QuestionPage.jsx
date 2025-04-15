@@ -27,10 +27,13 @@ const QuestionPage = () => {
   const { history, currentIndex } = useSelector((state) => state.questionnaire);
   const [currQuestion, setCurrQuestion] = useState({});
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  
+  const [loading, setLoading] = useState(false);
 
   // Fetch the next question
   const handleFetch = async (userId) => {
     try {
+      setLoading(true);
       const response = await fetchNextQuestion(userId);
       setCurrQuestion(response); // Set question from API
       dispatch(
@@ -41,22 +44,16 @@ const QuestionPage = () => {
       );
     } catch (error) {
       console.error("Error fetching API data:", error);
+    } finally{
+      setLoading(false);
     }
   };
 
   // Set the question from Redux or fetch it from API when necessary
   useEffect(() => {
-    const prevQA = history[currentIndex];
-
-    if (prevQA) {
-      // If we have a previous question in the history, use that
-      setCurrQuestion(prevQA.question);
-      setSelectedAnswer(prevQA.answer);
-    } else {
       // Otherwise, fetch the next question from the API
       handleFetch(userId);
-    }
-  }, [userId, currentIndex, history]);
+  }, [userId]);
 
   // Move to the next question
   const handleNext = async () => {
@@ -83,6 +80,16 @@ const QuestionPage = () => {
       dispatch(goToPrev());
     }
   };
+  useEffect(() => {
+    const prevQA = history[currentIndex];
+
+    if (prevQA) {
+      // If we have a previous question in the history, use that
+      setCurrQuestion(prevQA.question);
+      setSelectedAnswer(prevQA.answer);
+    } 
+  }, [currentIndex, history]);
+  
 
   // Handle loading UI and question progress
   const progressValue = (currentIndex / (TOTAL_QUESTIONS - 1)) * 100;
@@ -100,7 +107,24 @@ const QuestionPage = () => {
         padding: 2,
       }}
     >
-      {currQuestion?.text ? (
+      {loading ? (
+        // Show loading spinner
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            minHeight: 200,
+          }}
+        >
+          <CircularProgress color="primary" />
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
+            Loading question...
+          </Typography>
+        </Box>
+      ) : currQuestion?.id ? (
+        // Show question if available
         <>
           <Box sx={{ position: "relative", display: "inline-flex", mb: 3 }}>
             <CircularProgress
@@ -134,7 +158,7 @@ const QuestionPage = () => {
               </Typography>
             </Box>
           </Box>
-
+  
           <Card
             variant="outlined"
             sx={{
@@ -166,7 +190,7 @@ const QuestionPage = () => {
                 </Button>
               ))}
             </CardContent>
-
+  
             <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
               <Button
                 variant="outlined"
@@ -199,7 +223,16 @@ const QuestionPage = () => {
           </Card>
         </>
       ) : (
-        <Box sx={{ height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+        // Questionnaire Completed
+        <Box
+          sx={{
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Typography variant="h5" color="text.primary">
             Questionnaire Completed
           </Typography>
@@ -209,7 +242,7 @@ const QuestionPage = () => {
         </Box>
       )}
     </Box>
-  );
+  );  
 };
 
 export default QuestionPage;
