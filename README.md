@@ -2,6 +2,39 @@
 
 A dynamic, multi-step questionnaire application with branching logic, built using **React**, **Redux**, and **FastAPI**. The questionnaire adapts based on user responses and supports storing user data, slide transitions using Framer Motion, and centralized API handling.
 
+<p align="center">
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white" alt="Python" />
+  </a>
+  <a href="https://fastapi.tiangolo.com/">
+    <img src="https://img.shields.io/badge/FastAPI-Backend-0ba360?logo=fastapi&logoColor=white" alt="FastAPI" />
+  </a>
+  <img src="https://img.shields.io/badge/REST%20API-Enabled-lightgrey?logo=fastapi" alt="REST API" />
+  <a href="https://react.dev/">
+    <img src="https://img.shields.io/badge/React-Frontend-61DAFB?logo=react&logoColor=black" alt="React" />
+  </a>
+  <a href="https://redux-toolkit.js.org/">
+    <img src="https://img.shields.io/badge/Redux-Toolkit-764ABC?logo=redux&logoColor=white" alt="Redux Toolkit" />
+  </a>
+  <a href="https://www.framer.com/motion/">
+    <img src="https://img.shields.io/badge/Framer_Motion-Animation-black?logo=framer&logoColor=white" alt="Framer Motion" />
+  </a>
+  <a href="https://vitejs.dev/">
+    <img src="https://img.shields.io/badge/Vite-Frontend-646CFF?logo=vite&logoColor=white" alt="Vite" />
+  </a>
+  <a href="https://railway.app/">
+    <img src="https://img.shields.io/badge/Railway-Hosting-000000?logo=railway&logoColor=white" alt="Railway" />
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License" />
+  </a>
+</p>
+
+---
+## 🌐 Live Demo
+
+🚀 Check out the deployed app here: [questionnaireapp.up.railway.app](https://questionnaireapp.up.railway.app/)
+
 ---
 
 ## ✨ Features
