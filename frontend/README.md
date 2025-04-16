@@ -55,12 +55,12 @@ npm install
 In the `frontend` directory, create a file named `.env` and add:
 
 ```env
-VITE_BASE_URL='URL_OF_YOUR_BACKEND_SERVER'
+VITE_BASE_URL=URL_OF_YOUR_BACKEND_SERVER
 
 
 Example:
 
-VITE_BASE_URL='http://localhost:8000'
+VITE_BASE_URL=http://localhost:8000
 ```
 
 ### 5. Run the App
