@@ -15,7 +15,7 @@ node_modules/
 # Environment files
 *.local
 .env
-.env.*
+.env*
 
 # Optional: Backend-specific
 # You may leave these out since backend gitignore already has them
@@ -25,3 +25,4 @@ node_modules/
 # Optional: Frontend-specific
 # dist/
 # dist-ssr/
+
