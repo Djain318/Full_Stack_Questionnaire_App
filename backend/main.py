@@ -22,7 +22,7 @@ class AnswerInput(BaseModel):
     question_id: str
     answer: str
 
-# Lifespan function to initialize DB session at startup
+# #Lifespan function to initialize DB session at startup
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     db: Session = SessionLocal()  # Initialize DB session
@@ -106,3 +106,4 @@ def submit_answer(answer: AnswerInput):
     db.commit()
 
     return {"message": "✅ Answer saved!"}
+
